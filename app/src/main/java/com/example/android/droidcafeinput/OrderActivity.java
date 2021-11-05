@@ -76,19 +76,8 @@ public class OrderActivity extends AppCompatActivity
             spinner.setAdapter(adapter);
         }
     }
-    public void processDatePickerResult(int year, int month, int day) {
-        String month_string = Integer.toString(month+1);
-        String day_string = Integer.toString(day);
-        String year_string = Integer.toString(year);
-        String dateMessage = (month_string +
-                "/" + day_string + "/" + year_string);
-        Toast.makeText(this, "Date: " + dateMessage,
-                Toast.LENGTH_SHORT).show();
-    }
-    public void showDatePicker(View view) {
-        DialogFragment newFragment = new DatePickerFragment2();
-        newFragment.show(getSupportFragmentManager(),"datePicker");
-    }
+
+
     /**
      * Checks which radio button was clicked and displays a toast message to
      * show the choice.
@@ -147,5 +136,17 @@ public class OrderActivity extends AppCompatActivity
     public void onNothingSelected(AdapterView<?> adapterView) {
         // Do nothing.
     }
-
+    public void processDatePickerResult(int year, int month, int day) {
+        String month_string = Integer.toString(month+1);
+        String day_string = Integer.toString(day);
+        String year_string = Integer.toString(year);
+        String dateMessage = (month_string +
+                "/" + day_string + "/" + year_string);
+        Toast.makeText(this, "Date: " + dateMessage,
+                Toast.LENGTH_SHORT).show();
+    }
+    public void showDatePicker(View view) {
+        DialogFragment newFragment = new DatePickerFragment2();
+        newFragment.show(getSupportFragmentManager(),"datePicker");
+    }
 }

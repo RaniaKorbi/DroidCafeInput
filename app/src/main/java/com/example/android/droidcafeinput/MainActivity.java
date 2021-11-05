@@ -21,6 +21,8 @@ import android.os.Bundle;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.DialogFragment;
+
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -144,13 +146,5 @@ public class MainActivity extends AppCompatActivity {
         displayToast(mOrderMessage);
     }
 
-    public void processDatePickerResult(int year, int month, int day) {
-        String month_string = Integer.toString(month+1);
-        String day_string = Integer.toString(day);
-        String year_string = Integer.toString(year);
-        String dateMessage = (month_string +
-                "/" + day_string + "/" + year_string);
-        Toast.makeText(this, "Date: " + dateMessage,
-                Toast.LENGTH_SHORT).show();
-    }
+
 }
